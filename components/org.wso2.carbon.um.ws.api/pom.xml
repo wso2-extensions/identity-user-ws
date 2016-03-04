@@ -22,7 +22,7 @@
 
     <parent>
         <groupId>org.wso2.carbon.identity</groupId>
-        <artifactId>identity-usermgt-ws</artifactId>
+        <artifactId>identity-user-ws</artifactId>
         <relativePath>../../pom.xml</relativePath>
         <version>5.0.9-SNAPSHOT</version>
     </parent>

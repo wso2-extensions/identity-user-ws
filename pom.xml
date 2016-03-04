@@ -25,7 +25,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>identity-usermgt-ws</artifactId>
+    <artifactId>identity-user-ws</artifactId>
     <packaging>pom</packaging>
     <name>WSO2 Carbon Remote User Management Client</name>
     <description>
