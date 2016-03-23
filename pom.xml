@@ -115,10 +115,10 @@
     </pluginRepositories>
 
     <modules>
+        <module>components/org.wso2.carbon.um.ws.service</module>
         <module>components/org.wso2.carbon.um.ws.api</module>
         <module>components/org.wso2.carbon.um.ws.api.stub</module>
         <module>features/org.wso2.carbon.um.ws.service.client.feature</module>
-        <module>components/org.wso2.carbon.um.ws.service</module>
         <module>features/org.wso2.carbon.um.ws.service.feature</module>
         <module>features/org.wso2.carbon.um.ws.service.server.feature</module>
     </modules>
