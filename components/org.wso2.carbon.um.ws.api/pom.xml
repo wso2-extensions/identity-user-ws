@@ -24,7 +24,7 @@
         <groupId>org.wso2.carbon.identity</groupId>
         <artifactId>identity-user-ws</artifactId>
         <relativePath>../../pom.xml</relativePath>
-        <version>5.0.9-SNAPSHOT</version>
+        <version>5.1.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -94,7 +94,7 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Import-Package>
                             javax.xml.namespace,
-                            javax.xml.stream; version="${equinox.osgi.stax-api.imp.pkg.version.range}",
+                            javax.xml.stream,
                             javax.servlet.http; version="${imp.pkg.version.javax.servlet}",
                             org.apache.axiom.*; version="${axiom.osgi.version.range}",
                             org.apache.axis2.*; version="${axis2.osgi.version.range}",
