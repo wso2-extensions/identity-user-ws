@@ -271,7 +271,7 @@
 
     <properties>
         <carbon.kernel.version>4.4.7</carbon.kernel.version>
-        <identity.framework.version>5.2.0</identity.framework.version>
+        <identity.framework.version>5.2.1-SNAPSHOT</identity.framework.version>
         <junit.version>4.11</junit.version>
         <axis2.wso2.version>1.6.1.wso2v12</axis2.wso2.version>
         <axiom.wso2.version>1.2.11.wso2v10</axiom.wso2.version>
