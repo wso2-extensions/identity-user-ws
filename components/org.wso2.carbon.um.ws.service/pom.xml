@@ -85,12 +85,12 @@
                             org.wso2.carbon.context; version="${carbon.kernel.package.import.version.range}",
                             org.wso2.carbon.core; version="${carbon.kernel.package.import.version.range}",
                             org.wso2.carbon.user.core.*; version="${carbon.kernel.package.import.version.range}",
-                            org.wso2.carbon.user.mgt.common; version="${carbon.identity.package.import.version.range}",
+                            org.wso2.carbon.user.mgt.common; version="${identity.framework.package.import.version.range",
                             org.wso2.carbon.registry.core.service; version="${carbon.kernel.registry.imp.pkg.version}",
                             org.wso2.carbon.user.api; version="${carbon.user.api.imp.pkg.version.range}",
                         </Import-Package>
                         <Export-Package>
-                            org.wso2.carbon.um.ws.service.*; version="${carbon.identity.package.export.version}"
+                            org.wso2.carbon.um.ws.service.*; version="${identity.user.ws.export.version}"
                         </Export-Package>
                     </instructions>
                 </configuration>

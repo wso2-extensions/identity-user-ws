@@ -41,7 +41,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.wso2.carbon.um.ws.api.stub.*; version="${carbon.identity.package.export.version}"
+                            org.wso2.carbon.um.ws.api.stub.*; version="${identity.user.ws.export.version}"
                         </Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
@@ -129,7 +129,6 @@
         <dependency>
             <groupId>org.apache.ws.commons.axiom.wso2</groupId>
             <artifactId>axiom</artifactId>
-            <version>${axiom.wso2.version}</version>
         </dependency>
     </dependencies>
 
