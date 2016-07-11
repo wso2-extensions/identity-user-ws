@@ -109,7 +109,7 @@
                             org.wso2.carbon.user.api; version="${carbon.user.api.imp.pkg.version.range}",
                         </Import-Package>
                         <Export-Package>
-                            org.wso2.carbon.um.ws.api.*; version="${carbon.identity.package.export.version}",
+                            org.wso2.carbon.um.ws.api.*; version="${identity.user.ws.export.version}",
                         </Export-Package>
                     </instructions>
                 </configuration>
