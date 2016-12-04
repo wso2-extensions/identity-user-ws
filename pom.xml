@@ -302,6 +302,10 @@
         <module>features/org.wso2.carbon.um.ws.service.server.feature</module>
     </modules>
 
+    <properties>
+        <equinox.osgi.stax-api.imp.pkg.version.range>[1.0.1,2.0.0)</equinox.osgi.stax-api.imp.pkg.version.range>
+    </properties>
+
 </project>
 
 
