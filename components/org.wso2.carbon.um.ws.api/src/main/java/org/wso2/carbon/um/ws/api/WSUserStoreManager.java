@@ -537,7 +537,14 @@ public class WSUserStoreManager implements UserStoreManager {
     @Override
     public Map<String, String> getProperties(org.wso2.carbon.user.api.Tenant tenant)
             throws org.wso2.carbon.user.core.UserStoreException {
-        return getProperties(Tenant.class.cast(tenant));
+
+        if (tenant instanceof Tenant) {
+            return getProperties(Tenant.class.cast(tenant));
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("tenant is not an instance of Tenant.");
+        }
+        return new HashMap<>();
     }
 
     @Override

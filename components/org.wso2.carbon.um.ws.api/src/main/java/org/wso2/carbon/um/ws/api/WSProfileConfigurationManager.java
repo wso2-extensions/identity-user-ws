@@ -100,21 +100,45 @@ public class WSProfileConfigurationManager implements ProfileConfigurationManage
     @Override
     public void addProfileConfig(org.wso2.carbon.user.api.ProfileConfiguration profileConfiguration)
             throws org.wso2.carbon.user.api.UserStoreException {
-        addProfileConfig((ProfileConfiguration) profileConfiguration);
+
+        if (profileConfiguration instanceof ProfileConfiguration) {
+            addProfileConfig((ProfileConfiguration) profileConfiguration);
+        } else {
+            if (log.isDebugEnabled()) {
+                log.debug("profileConfiguration is not an instance of ProfileConfiguration. So addProfileConfig " +
+                        "operation is skipped");
+            }
+        }
     }
 
     @Override
     public void updateProfileConfig(
             org.wso2.carbon.user.api.ProfileConfiguration profileConfiguration)
             throws org.wso2.carbon.user.api.UserStoreException {
-        updateProfileConfig((ProfileConfiguration) profileConfiguration);
+
+        if (profileConfiguration instanceof ProfileConfiguration) {
+            updateProfileConfig((ProfileConfiguration) profileConfiguration);
+        } else {
+            if (log.isDebugEnabled()) {
+                log.debug("profileConfiguration is not an instance of ProfileConfiguration. So updateProfileConfig " +
+                        "operation is skipped");
+            }
+        }
     }
 
     @Override
     public void deleteProfileConfig(
             org.wso2.carbon.user.api.ProfileConfiguration profileConfiguration)
             throws org.wso2.carbon.user.api.UserStoreException {
-        deleteProfileConfig((ProfileConfiguration) profileConfiguration);
+
+        if (profileConfiguration instanceof ProfileConfiguration) {
+            deleteProfileConfig((ProfileConfiguration) profileConfiguration);
+        } else {
+            if (log.isDebugEnabled()) {
+                log.debug("profileConfiguration is not an instance of ProfileConfiguration. So deleteProfileConfig " +
+                        "operation is skipped");
+            }
+        }
     }
 
     private String[] handleException(String msg, Exception e) throws UserStoreException {

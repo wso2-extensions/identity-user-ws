@@ -148,13 +148,29 @@ public class WSRealmTenantManager implements TenantManager {
     @Override
     public int addTenant(org.wso2.carbon.user.api.Tenant tenant)
             throws org.wso2.carbon.user.api.UserStoreException {
-        return addTenant((Tenant) tenant);
+
+        if (tenant instanceof Tenant) {
+            return addTenant((Tenant) tenant);
+        }
+        if (log.isDebugEnabled()) {
+            log.debug("tenant is not an instance of Tenant. So addTenant " +
+                    "operation is skipped");
+        }
+        return -1;
     }
 
     @Override
     public void updateTenant(org.wso2.carbon.user.api.Tenant tenant)
             throws org.wso2.carbon.user.api.UserStoreException {
-        updateTenant((Tenant) tenant);
+
+        if (tenant instanceof Tenant) {
+            updateTenant((Tenant) tenant);
+        } else {
+            if (log.isDebugEnabled()) {
+                log.debug("tenant is not an instance of Tenant. So updateTenant " +
+                        "operation is skipped");
+            }
+        }
     }
 
     @Override
