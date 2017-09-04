@@ -23,6 +23,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.base.MultitenantConstants;
 import org.wso2.carbon.context.CarbonContext;
+import org.wso2.carbon.user.api.Claim;
+import org.wso2.carbon.user.api.ClaimMapping;
 import org.wso2.carbon.user.core.UserStoreException;
 
 /**
@@ -60,5 +62,67 @@ public class Util {
     static boolean isSuperTenant() {
         int tenantId = CarbonContext.getThreadLocalCarbonContext().getTenantId();
         return tenantId == MultitenantConstants.SUPER_TENANT_ID;
+    }
+
+    /**
+     * Ensure the given claim is an actual instance of org.wso2.carbon.user.api.Claim.
+     * @param claim
+     * @return org.wso2.carbon.user.api.Claim.
+     */
+    static Claim ensureInstanceType(Claim claim) {
+        if (claim == null) {
+            return new Claim();
+        }
+        if (Claim.class.getName().equals(claim.getClass().getName())){
+            return claim;
+        }
+        Claim apiClaim = new Claim();
+        apiClaim.setClaimUri(claim.getClaimUri());
+        apiClaim.setReadOnly(claim.isReadOnly());
+        apiClaim.setCheckedAttribute(claim.isCheckedAttribute());
+        apiClaim.setDisplayTag(claim.getDisplayTag());
+        apiClaim.setDescription(claim.getDescription());
+        apiClaim.setSupportedByDefault(claim.isSupportedByDefault());
+        apiClaim.setRequired(claim.isRequired());
+        apiClaim.setRegEx(claim.getRegEx());
+        apiClaim.setDialectURI(claim.getDialectURI());
+        apiClaim.setValue(claim.getValue());
+        apiClaim.setDisplayOrder(claim.getDisplayOrder());
+        return apiClaim;
+    }
+
+    /**
+     * Ensure the given claim is an actual instance of org.wso2.carbon.user.api.ClaimMapping.
+     * @param claimMapping
+     * @return org.wso2.carbon.user.api.ClaimMapping
+     */
+    static ClaimMapping ensureInstanceType(ClaimMapping claimMapping){
+        if (claimMapping == null) {
+            return new ClaimMapping();
+        }
+        if (ClaimMapping.class.getName().equals(claimMapping.getClass().getName())){
+            return claimMapping;
+        }
+        ClaimMapping apiClaimMapping = new ClaimMapping(
+                ensureInstanceType(claimMapping.getClaim()),
+                claimMapping.getMappedAttribute());
+        apiClaimMapping.setMappedAttributes(claimMapping.getMappedAttributes());
+        return apiClaimMapping;
+    }
+
+    /**
+     * Ensure the given claim is an array of actual instances of org.wso2.carbon.user.api.ClaimMapping.
+     * @param claimMappings
+     * @return possible null || org.wso2.carbon.user.api.ClaimMapping[]
+     */
+    static ClaimMapping[] ensureInstanceType(ClaimMapping[] claimMappings){
+        if (claimMappings == null) {
+            return claimMappings;
+        }
+        ClaimMapping[] apiClaimMappings = new ClaimMapping[claimMappings.length];
+        for (int i=0; i<claimMappings.length; i++){
+            apiClaimMappings[i] = ensureInstanceType(claimMappings[i]);
+        }
+        return apiClaimMappings;
     }
 }
