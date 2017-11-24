@@ -73,7 +73,7 @@ public class Util {
         if (claim == null) {
             return new Claim();
         }
-        if (Claim.class.getName().equals(claim.getClass().getName())){
+        if (Claim.class.getName().equals(claim.getClass().getName())) {
             return claim;
         }
         Claim apiClaim = new Claim();
@@ -96,11 +96,11 @@ public class Util {
      * @param claimMapping
      * @return org.wso2.carbon.user.api.ClaimMapping
      */
-    static ClaimMapping ensureInstanceType(ClaimMapping claimMapping){
+    static ClaimMapping ensureInstanceType(ClaimMapping claimMapping) {
         if (claimMapping == null) {
             return new ClaimMapping();
         }
-        if (ClaimMapping.class.getName().equals(claimMapping.getClass().getName())){
+        if (ClaimMapping.class.getName().equals(claimMapping.getClass().getName())) {
             return claimMapping;
         }
         ClaimMapping apiClaimMapping = new ClaimMapping(
@@ -115,12 +115,12 @@ public class Util {
      * @param claimMappings
      * @return possible null || org.wso2.carbon.user.api.ClaimMapping[]
      */
-    static ClaimMapping[] ensureInstanceType(ClaimMapping[] claimMappings){
+    static ClaimMapping[] ensureInstanceType(ClaimMapping[] claimMappings) {
         if (claimMappings == null) {
             return claimMappings;
         }
         ClaimMapping[] apiClaimMappings = new ClaimMapping[claimMappings.length];
-        for (int i=0; i<claimMappings.length; i++){
+        for (int i = 0; i < claimMappings.length; i++){
             apiClaimMappings[i] = ensureInstanceType(claimMappings[i]);
         }
         return apiClaimMappings;
