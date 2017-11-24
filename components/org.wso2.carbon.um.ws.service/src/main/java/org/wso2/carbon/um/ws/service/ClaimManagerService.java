@@ -48,9 +48,9 @@ public class ClaimManagerService extends AbstractAdmin {
     public ClaimMapping[] getAllClaimMappings(String dialectUri) throws UserStoreException {
         try {
             if (dialectUri == null) {
-                return getClaimManager().getAllClaimMappings();
+                return Util.ensureInstanceType(getClaimManager().getAllClaimMappings());
             } else {
-                return getClaimManager().getAllClaimMappings(dialectUri);
+                return Util.ensureInstanceType(getClaimManager().getAllClaimMappings(dialectUri));
             }
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
             throw new UserStoreException(e);
@@ -67,7 +67,7 @@ public class ClaimManagerService extends AbstractAdmin {
 
     public ClaimMapping[] getAllRequiredClaimMappings() throws UserStoreException {
         try {
-            return getClaimManager().getAllRequiredClaimMappings();
+            return Util.ensureInstanceType(getClaimManager().getAllRequiredClaimMappings());
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
             throw new UserStoreException(e);
         }
@@ -75,7 +75,7 @@ public class ClaimManagerService extends AbstractAdmin {
 
     public ClaimMapping[] getAllSupportClaimMappingsByDefault() throws UserStoreException {
         try {
-            return getClaimManager().getAllSupportClaimMappingsByDefault();
+            return Util.ensureInstanceType(getClaimManager().getAllSupportClaimMappingsByDefault());
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
             throw new UserStoreException(e);
         }
@@ -99,7 +99,7 @@ public class ClaimManagerService extends AbstractAdmin {
 
     public Claim getClaim(String claimURI) throws UserStoreException {
         try {
-            return  getClaimManager().getClaim(claimURI);
+            return Util.ensureInstanceType(getClaimManager().getClaim(claimURI));
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
             throw new UserStoreException(e);
         }
@@ -107,7 +107,7 @@ public class ClaimManagerService extends AbstractAdmin {
 
     public ClaimMapping getClaimMapping(String claimURI) throws UserStoreException {
         try {
-            return getClaimManager().getClaimMapping(claimURI);
+            return Util.ensureInstanceType(getClaimManager().getClaimMapping(claimURI));
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
             throw new UserStoreException(e);
         }
