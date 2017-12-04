@@ -40,6 +40,7 @@
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/rolemgt/create
             </parameter>
+            <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
         <operation name="addUser">
