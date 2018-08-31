@@ -86,7 +86,7 @@
                                     <classpath refid="wsdl2java.classpath" />
                                 </java>
                                 <java classname="org.apache.axis2.wsdl.WSDL2Java" fork="true">
-                                    <arg line="-uri src/main/resources/RemoteTenantManagerService.wsdl -u -uw -p org.wso2.carbon.um.ws.api.stub -o target/generated-code -ns2p http://dao.service.ws.um.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub,http://service.ws.um.carbon.wso2.org=org.wso2.carbon.um.ws.api.stub,http://mgt.user.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub,http://core.user.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub,http://claim.core.user.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub,http://tenant.core.user.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub,http://api.user.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub" />
+                                    <arg line="-uri src/main/resources/RemoteTenantManagerService.wsdl -u -uw -p org.wso2.carbon.um.ws.api.stub -o target/generated-code -ns2p http://dao.service.ws.um.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub,http://service.ws.um.carbon.wso2.org=org.wso2.carbon.um.ws.api.stub,http://mgt.user.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub,http://core.user.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub,http://claim.core.user.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub,http://tenant.core.user.carbon.wso2.org/xsd=org.wso2.carbon.um.ws.api.stub" />
                                     <classpath refid="wsdl2java.classpath" />
                                 </java>
                             </tasks>
