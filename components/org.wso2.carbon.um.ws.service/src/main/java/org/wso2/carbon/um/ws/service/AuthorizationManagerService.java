@@ -119,6 +119,11 @@ public class AuthorizationManagerService extends AbstractAdmin {
         return getAuthorizationManager().getAllowedUIResourcesForUser(userName, permissionRootPath);
     }
 
+    public String[] getAllowedUIResourcesForRole(String roleName, String permissionRootPath)
+            throws org.wso2.carbon.user.api.UserStoreException {
+        return getAuthorizationManager().getAllowedUIResourcesForRole(roleName, permissionRootPath);
+    }
+
     public void resetPermissionOnUpdateRole(String roleName, String newRoleName)
             throws UserStoreException {
         getAuthorizationManager().resetPermissionOnUpdateRole(roleName, newRoleName);
