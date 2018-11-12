@@ -139,6 +139,23 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="getAllowedUIResourcesForRole">
+                <xs:complexType>
+                    <xs:sequence>
+
+                        <xs:element minOccurs="0" name="roleName" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="permissionRootPath" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllowedUIResourcesForRoleResponse">
+                <xs:complexType>
+                    <xs:sequence>
+
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="getAllowedRolesForResource">
                 <xs:complexType>
                     <xs:sequence>
@@ -248,6 +265,13 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="refreshAllowedRolesForResource">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="resourceId" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:schema>
         <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://core.user.carbon.wso2.org/xsd">
             <xs:complexType name="UserStoreException">
@@ -272,6 +296,9 @@
     <wsdl:message name="resetPermissionOnUpdateRoleRequest">
         <wsdl:part name="parameters" element="ns:resetPermissionOnUpdateRole" />
     </wsdl:message>
+    <wsdl:message name="refreshAllowedRolesForResourceRequest">
+        <wsdl:part name="parameters" element="ns:refreshAllowedRolesForResource"/>
+    </wsdl:message>
     <wsdl:message name="authorizeRoleRequest">
         <wsdl:part name="parameters" element="ns:authorizeRole" />
 
@@ -288,6 +315,13 @@
     </wsdl:message>
     <wsdl:message name="isUserAuthorizedResponse">
         <wsdl:part name="parameters" element="ns:isUserAuthorizedResponse" />
+    </wsdl:message>
+    <wsdl:message name="getAllowedUIResourcesForRoleRequest">
+        <wsdl:part name="parameters" element="ns:getAllowedUIResourcesForRole"/>
+    </wsdl:message>
+
+    <wsdl:message name="getAllowedUIResourcesForRoleResponse">
+        <wsdl:part name="parameters" element="ns:getAllowedUIResourcesForRoleResponse"/>
     </wsdl:message>
     <wsdl:message name="getExplicitlyDeniedUsersForResourceRequest">
         <wsdl:part name="parameters" element="ns:getExplicitlyDeniedUsersForResource" />
@@ -358,6 +392,11 @@
             <wsdl:input message="ns:resetPermissionOnUpdateRoleRequest" wsaw:Action="urn:resetPermissionOnUpdateRole" />
             <wsdl:fault message="ns:UserStoreException" name="UserStoreException" wsaw:Action="urn:resetPermissionOnUpdateRoleUserStoreException" />
         </wsdl:operation>
+        <wsdl:operation name="refreshAllowedRolesForResource">
+
+            <wsdl:input message="ns:refreshAllowedRolesForResourceRequest" wsaw:Action="urn:refreshAllowedRolesForResource"/>
+            <wsdl:fault message="ns:UserStoreException" name="UserStoreException" wsaw:Action="urn:refreshAllowedRolesForResourceUserStoreException"/>
+        </wsdl:operation>
         <wsdl:operation name="authorizeRole">
             <wsdl:input message="ns:authorizeRoleRequest" wsaw:Action="urn:authorizeRole" />
             <wsdl:fault message="ns:UserStoreException" name="UserStoreException" wsaw:Action="urn:authorizeRoleUserStoreException" />
@@ -376,6 +415,12 @@
             <wsdl:output message="ns:isUserAuthorizedResponse" wsaw:Action="urn:isUserAuthorizedResponse" />
 
             <wsdl:fault message="ns:UserStoreException" name="UserStoreException" wsaw:Action="urn:isUserAuthorizedUserStoreException" />
+        </wsdl:operation>
+        <wsdl:operation name="getAllowedUIResourcesForRole">
+            <wsdl:input message="ns:getAllowedUIResourcesForRoleRequest" wsaw:Action="urn:getAllowedUIResourcesForRole"/>
+            <wsdl:output message="ns:getAllowedUIResourcesForRoleResponse" wsaw:Action="urn:getAllowedUIResourcesForRoleResponse"/>
+
+            <wsdl:fault message="ns:UserStoreException" name="UserStoreException" wsaw:Action="urn:getAllowedUIResourcesForRoleUserStoreException"/>
         </wsdl:operation>
         <wsdl:operation name="getExplicitlyDeniedUsersForResource">
             <wsdl:input message="ns:getExplicitlyDeniedUsersForResourceRequest" wsaw:Action="urn:getExplicitlyDeniedUsersForResource" />
@@ -468,6 +513,16 @@
                 <soap:fault use="literal" name="UserStoreException" />
             </wsdl:fault>
         </wsdl:operation>
+        <wsdl:operation name="refreshAllowedRolesForResource">
+            <soap:operation soapAction="urn:refreshAllowedRolesForResource" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:fault name="UserStoreException">
+
+                <soap:fault use="literal" name="UserStoreException"/>
+            </wsdl:fault>
+        </wsdl:operation>
         <wsdl:operation name="authorizeRole">
             <soap:operation soapAction="urn:authorizeRole" style="document" />
             <wsdl:input>
@@ -509,6 +564,19 @@
             </wsdl:output>
             <wsdl:fault name="UserStoreException">
                 <soap:fault use="literal" name="UserStoreException" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAllowedUIResourcesForRole">
+            <soap:operation soapAction="urn:getAllowedUIResourcesForRole" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="UserStoreException">
+                <soap:fault use="literal" name="UserStoreException"/>
             </wsdl:fault>
         </wsdl:operation>
         <wsdl:operation name="getExplicitlyDeniedUsersForResource">
@@ -675,6 +743,16 @@
             </wsdl:fault>
         </wsdl:operation>
 
+        <wsdl:operation name="refreshAllowedRolesForResource">
+            <soap12:operation soapAction="urn:refreshAllowedRolesForResource" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:fault name="UserStoreException">
+                <soap12:fault use="literal" name="UserStoreException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+
         <wsdl:operation name="authorizeRole">
             <soap12:operation soapAction="urn:authorizeRole" style="document" />
             <wsdl:input>
@@ -716,6 +794,20 @@
             <wsdl:fault name="UserStoreException">
 
                 <soap12:fault use="literal" name="UserStoreException" />
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="getAllowedUIResourcesForRole">
+            <soap12:operation soapAction="urn:getAllowedUIResourcesForRole" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="UserStoreException">
+
+                <soap12:fault use="literal" name="UserStoreException"/>
             </wsdl:fault>
         </wsdl:operation>
         <wsdl:operation name="getExplicitlyDeniedUsersForResource">
@@ -871,6 +963,14 @@
                 <mime:content type="text/xml" part="parameters" />
             </wsdl:input>
         </wsdl:operation>
+
+        <wsdl:operation name="refreshAllowedRolesForResource">
+            <http:operation location="refreshAllowedRolesForResource"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+        </wsdl:operation>
+
         <wsdl:operation name="authorizeRole">
             <http:operation location="authorizeRole" />
             <wsdl:input>
@@ -899,6 +999,16 @@
             </wsdl:input>
             <wsdl:output>
                 <mime:content type="text/xml" part="parameters" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllowedUIResourcesForRole">
+            <http:operation location="getAllowedUIResourcesForRole"/>
+            <wsdl:input>
+
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="getExplicitlyDeniedUsersForResource">

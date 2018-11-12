@@ -247,6 +247,16 @@ public class WSAuthorizationManager implements AuthorizationManager {
     }
 
     @Override
+    public void refreshAllowedRolesForResource(String s) throws UserStoreException {
+
+        try {
+            stub.refreshAllowedRolesForResource(s);
+        } catch (Exception e) {
+            this.handleException(e.getMessage(), e);
+        }
+    }
+
+    @Override
     public int getTenantId() throws UserStoreException {
 
         return 0;
