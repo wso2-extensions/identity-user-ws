@@ -25,6 +25,7 @@ import org.wso2.carbon.user.core.tenant.Tenant;
 import org.wso2.carbon.user.core.tenant.TenantManager;
 
 // TODO super tenant service
+@Deprecated
 public class TenantManagerService extends AbstractAdmin {
 
     private static Log log = LogFactory.getLog(TenantManager.class);
