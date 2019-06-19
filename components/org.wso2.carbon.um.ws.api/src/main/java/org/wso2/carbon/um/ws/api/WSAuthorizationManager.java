@@ -247,6 +247,11 @@ public class WSAuthorizationManager implements AuthorizationManager {
     }
 
     @Override
+    public void refreshAllowedRolesForResource(String resourceId) throws UserStoreException {
+
+    }
+
+    @Override
     public int getTenantId() throws UserStoreException {
 
         return 0;
