@@ -30,7 +30,7 @@ import org.wso2.carbon.registry.core.service.RegistryService;
 import org.wso2.carbon.user.core.service.RealmService;
 
 @Component(
-        name = "remote.um.api.component",
+        name = "remote.um.service.component",
         immediate = true)
 public class UMRemoteServicesDSComponent {
 
