@@ -18,6 +18,8 @@
 
 package org.wso2.carbon.um.ws.service;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.core.AbstractAdmin;
 import org.wso2.carbon.um.ws.service.internal.UMRemoteServicesDSComponent;
 import org.wso2.carbon.user.core.UserStoreException;
@@ -25,9 +27,18 @@ import org.wso2.carbon.user.core.tenant.Tenant;
 import org.wso2.carbon.user.core.tenant.TenantManager;
 
 // TODO super tenant service
+@Deprecated
 public class TenantManagerService extends AbstractAdmin {
 
+    private static Log log = LogFactory.getLog(TenantManager.class);
+
+    private static final String logMessage =
+            "RemoteTenantManagerService is deprecated. Please use TenantMgtAdminService for tenant related operations";
+
     public void activateTenant(int tenantId) throws UserStoreException {
+
+        log.warn(logMessage);
+
         try {
             getTenantManager().activateTenant(tenantId);
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -36,6 +47,9 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     public int addTenant(Tenant tenant) throws UserStoreException {
+
+        log.warn(logMessage);
+
         try {
             return getTenantManager().addTenant(tenant);
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -44,6 +58,9 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     public void deactivateTenant(int tenantId) throws UserStoreException {
+
+        log.warn(logMessage);
+
         try {
             getTenantManager().deactivateTenant(tenantId);
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -52,6 +69,9 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     public void deleteTenant(int tenantId) throws UserStoreException {
+
+        log.warn(logMessage);
+
         try {
             getTenantManager().deleteTenant(tenantId);
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -60,6 +80,9 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     public Tenant[] getAllTenants() throws UserStoreException {
+
+        log.warn(logMessage);
+
         try {
             return (Tenant[]) getTenantManager().getAllTenants();
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -68,6 +91,7 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     public String getDomain(int tenantId) throws UserStoreException {
+
         try {
             return getTenantManager().getDomain(tenantId);
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -76,10 +100,16 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     public String getSuperTenantDomain() throws UserStoreException {
+
+        log.warn(logMessage);
+
         return getTenantManager().getSuperTenantDomain();
     }
 
     public Tenant getTenant(int tenantId) throws UserStoreException {
+
+        log.warn(logMessage);
+
         try {
             return (Tenant) getTenantManager().getTenant(tenantId);
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -88,6 +118,9 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     public int getTenantId(String domain) throws UserStoreException {
+
+        log.warn(logMessage);
+
         try {
             return getTenantManager().getTenantId(domain);
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -96,6 +129,9 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     public boolean isTenantActive(int tenantId) throws UserStoreException {
+
+        log.warn(logMessage);
+
         try {
             return getTenantManager().isTenantActive(tenantId);
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -104,6 +140,9 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     public void updateTenant(Tenant tenant) throws UserStoreException {
+
+        log.warn(logMessage);
+
         try {
             getTenantManager().updateTenant(tenant);
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
@@ -112,6 +151,7 @@ public class TenantManagerService extends AbstractAdmin {
     }
 
     private TenantManager getTenantManager() {
+
         return UMRemoteServicesDSComponent.getRealmService().getTenantManager();
     }
 
