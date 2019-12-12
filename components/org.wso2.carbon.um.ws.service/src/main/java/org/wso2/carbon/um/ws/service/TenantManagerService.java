@@ -26,8 +26,10 @@ import org.wso2.carbon.user.core.UserStoreException;
 import org.wso2.carbon.user.core.tenant.Tenant;
 import org.wso2.carbon.user.core.tenant.TenantManager;
 
-// TODO super tenant service
-@Deprecated
+/**
+ * RemoteTenantManagerService admin service.
+ * @deprecated as of version 5.3.5. Use {@link org.wso2.carbon.tenant.mgt.services.TenantMgtAdminService}
+ */
 public class TenantManagerService extends AbstractAdmin {
 
     private static Log log = LogFactory.getLog(TenantManager.class);
@@ -154,5 +156,4 @@ public class TenantManagerService extends AbstractAdmin {
 
         return UMRemoteServicesDSComponent.getRealmService().getTenantManager();
     }
-
 }
