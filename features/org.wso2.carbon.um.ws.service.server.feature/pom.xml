@@ -22,7 +22,7 @@
         <groupId>org.wso2.carbon.identity.user.ws</groupId>
         <artifactId>identity-user-ws</artifactId>
         <relativePath>../../pom.xml</relativePath>
-        <version>5.1.12-SNAPSHOT</version>
+        <version>5.3.6-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -66,7 +66,7 @@
                                 <bundleDef>org.wso2.carbon.identity.user.ws:org.wso2.carbon.um.ws.service</bundleDef>
                             </bundles>
                             <importFeatures>
-                                <importFeatureDef>org.wso2.carbon.core:compatible:${carbon.kernel.version}
+                                <importFeatureDef>org.wso2.carbon.core:compatible:${carbon.kernel.feature.version}
                                 </importFeatureDef>
                             </importFeatures>
                         </configuration>

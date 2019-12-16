@@ -247,7 +247,7 @@ public class WSAuthorizationManager implements AuthorizationManager {
     }
 
     @Override
-    public void refreshAllowedRolesForResource(String s) throws UserStoreException {
+    public void refreshAllowedRolesForResource(String resourceId) throws UserStoreException {
 
         try {
             stub.refreshAllowedRolesForResource(s);
