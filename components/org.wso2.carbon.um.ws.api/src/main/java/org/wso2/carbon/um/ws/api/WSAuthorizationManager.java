@@ -250,7 +250,7 @@ public class WSAuthorizationManager implements AuthorizationManager {
     public void refreshAllowedRolesForResource(String resourceId) throws UserStoreException {
 
         try {
-            stub.refreshAllowedRolesForResource(s);
+            stub.refreshAllowedRolesForResource(resourceId);
         } catch (Exception e) {
             this.handleException(e.getMessage(), e);
         }
