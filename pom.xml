@@ -284,8 +284,8 @@
     </build>
 
     <properties>
-        <carbon.kernel.version>4.5.0</carbon.kernel.version>
-        <carbon.kernel.feature.version>4.5.0</carbon.kernel.feature.version>
+        <carbon.kernel.version>4.6.0</carbon.kernel.version>
+        <carbon.kernel.feature.version>4.6.0</carbon.kernel.feature.version>
         <identity.framework.version>5.14.67</identity.framework.version>
         <junit.version>4.11</junit.version>
         <axis2.wso2.version>1.6.1-wso2v38</axis2.wso2.version>
