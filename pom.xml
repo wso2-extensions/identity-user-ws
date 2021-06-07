@@ -287,7 +287,7 @@
         <carbon.kernel.version>4.6.0</carbon.kernel.version>
         <carbon.kernel.feature.version>4.6.0</carbon.kernel.feature.version>
         <identity.framework.version>5.14.67</identity.framework.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
         <axis2.wso2.version>1.6.1-wso2v38</axis2.wso2.version>
         <axiom.wso2.version>1.2.11-wso2v16</axiom.wso2.version>
         <commons-lang.wso2.version>2.6.0.wso2v1</commons-lang.wso2.version>
