@@ -27,7 +27,7 @@
     <groupId>org.wso2.carbon.identity.user.ws</groupId>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>identity-user-ws</artifactId>
-    <version>5.7.2-SNAPSHOT</version>
+    <version>6.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WSO2 Carbon Remote User Management Client</name>
     <description>
