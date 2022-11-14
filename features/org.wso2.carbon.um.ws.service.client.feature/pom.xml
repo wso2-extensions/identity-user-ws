@@ -22,7 +22,7 @@
         <groupId>org.wso2.carbon.identity.user.ws</groupId>
         <artifactId>identity-user-ws</artifactId>
         <relativePath>../../pom.xml</relativePath>
-        <version>5.5.0</version>
+        <version>6.0.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
