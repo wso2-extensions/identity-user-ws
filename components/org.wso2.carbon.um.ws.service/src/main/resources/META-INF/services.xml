@@ -36,28 +36,28 @@
         <parameter name="ServiceClass" locked="false">org.wso2.carbon.um.ws.service.UserStoreManagerService</parameter>
         <parameter name="AuthorizationAction" locked="false">/permission/admin/manage/identity</parameter>
 
-        <operation name="addRole">
+        <operation name="addRole" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/rolemgt/create
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="addUser">
+        <operation name="addUser" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/create
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="addUserClaimValue">
+        <operation name="addUserClaimValue" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="addUserClaimValues">
+        <operation name="addUserClaimValues" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
@@ -70,28 +70,28 @@
             </parameter>
         </operation>
 
-        <operation name="deleteRole">
+        <operation name="deleteRole" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/rolemgt/delete
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="deleteUser">
+        <operation name="deleteUser" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/delete
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="deleteUserClaimValue">
+        <operation name="deleteUserClaimValue" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/delete
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="deleteUserClaimValues">
+        <operation name="deleteUserClaimValues" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/delete
             </parameter>
@@ -206,49 +206,49 @@
             </parameter>
         </operation>
 
-        <operation name="setUserClaimValue">
+        <operation name="setUserClaimValue" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="setUserClaimValues">
+        <operation name="setUserClaimValues" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="updateCredential">
+        <operation name="updateCredential" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="updateCredentialByAdmin">
+        <operation name="updateCredentialByAdmin" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="updateRoleListOfUser">
+        <operation name="updateRoleListOfUser" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="updateRoleName">
+        <operation name="updateRoleName" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/rolemgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
-        <operation name="updateUserListOfRole">
+        <operation name="updateUserListOfRole" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/rolemgt/update
             </parameter>
