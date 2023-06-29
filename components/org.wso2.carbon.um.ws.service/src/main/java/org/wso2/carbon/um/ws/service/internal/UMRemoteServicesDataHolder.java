@@ -18,7 +18,6 @@
 
 package org.wso2.carbon.um.ws.service.internal;
 
-import org.wso2.carbon.registry.core.service.RegistryService;
 import org.wso2.carbon.user.core.service.RealmService;
 
 public class UMRemoteServicesDataHolder {
@@ -26,9 +25,6 @@ public class UMRemoteServicesDataHolder {
 
     private RealmService realmService;
     private static UMRemoteServicesDataHolder instance = new UMRemoteServicesDataHolder();
-
-
-    private RegistryService registryService;
 
     private UMRemoteServicesDataHolder() {
     }
@@ -44,13 +40,5 @@ public class UMRemoteServicesDataHolder {
 
     public void setRealmService(RealmService realmService) {
         this.realmService = realmService;
-    }
-
-    public RegistryService getRegistryService() {
-        return registryService;
-    }
-
-    public void setRegistryService(RegistryService registryService) {
-        this.registryService = registryService;
     }
 }
