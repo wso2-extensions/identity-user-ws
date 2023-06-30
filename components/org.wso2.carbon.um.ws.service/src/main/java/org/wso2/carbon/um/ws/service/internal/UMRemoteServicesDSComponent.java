@@ -26,7 +26,6 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
-import org.wso2.carbon.registry.core.service.RegistryService;
 import org.wso2.carbon.user.core.service.RealmService;
 
 @Component(
@@ -39,22 +38,6 @@ public class UMRemoteServicesDSComponent {
     private static final String ACTIVATION_MESSAGE = "Remote User Mgt bundle is activated ";
 
     private static final String UNSETTING_MESSAGE = "Unsetting the Realm service ";
-
-    public static RegistryService getRegistryService() {
-
-        return UMRemoteServicesDataHolder.getInstance().getRegistryService();
-    }
-
-    @Reference(
-            name = "registry.service",
-            service = org.wso2.carbon.registry.core.service.RegistryService.class,
-            cardinality = ReferenceCardinality.MANDATORY,
-            policy = ReferencePolicy.DYNAMIC,
-            unbind = "unsetRegistryService")
-    protected void setRegistryService(RegistryService registryService) {
-
-        UMRemoteServicesDataHolder.getInstance().setRegistryService(registryService);
-    }
 
     public static RealmService getRealmService() {
 
@@ -93,10 +76,5 @@ public class UMRemoteServicesDSComponent {
             log.debug(UNSETTING_MESSAGE);
         }
         UMRemoteServicesDataHolder.getInstance().setRealmService(null);
-    }
-
-    protected void unsetRegistryService(RegistryService registryService) {
-
-        UMRemoteServicesDataHolder.getInstance().setRegistryService(null);
     }
 }
