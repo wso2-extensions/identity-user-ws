@@ -212,7 +212,7 @@
         <identity.user.ws.export.version>${project.version}</identity.user.ws.export.version>
         <maven.buildnumber.plugin.version>1.4</maven.buildnumber.plugin.version>
 
-        <identity.framework.package.import.version.range>[5.5.0, 7.0.0)</identity.framework.package.import.version.range>
+        <identity.framework.package.import.version.range>[5.5.0, 8.0.0)</identity.framework.package.import.version.range>
         <osgi.service.component.imp.pkg.version.range>[1.2.0, 2.0.0)</osgi.service.component.imp.pkg.version.range>
         <commons-logging.osgi.version.range>[1.2.0,2.0.0)</commons-logging.osgi.version.range>
         <carbon.kernel.package.import.version.range>[4.5.0, 5.0.0)</carbon.kernel.package.import.version.range>
