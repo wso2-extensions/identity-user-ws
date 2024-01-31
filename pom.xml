@@ -39,7 +39,7 @@
         <url>https://github.com/wso2-extensions/identity-user-ws.git</url>
         <developerConnection>scm:git:https://github.com/wso2-extensions/identity-user-ws.git</developerConnection>
         <connection>scm:git:https://github.com/wso2-extensions/identity-user-ws.git</connection>
-        <tag>v5.7.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
