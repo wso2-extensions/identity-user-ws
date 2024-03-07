@@ -43,11 +43,23 @@
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
+        <operation name="addRoleV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/rolemgt/create
+            </parameter>
+        </operation>
+
         <operation name="addUser" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/create
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
+        </operation>
+
+        <operation name="addUserV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/create
+            </parameter>
         </operation>
 
         <operation name="addUserClaimValue" mep="http://www.w3.org/ns/wsdl/in-only">
@@ -57,11 +69,23 @@
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
+        <operation name="addUserClaimValueV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/update
+            </parameter>
+        </operation>
+
         <operation name="addUserClaimValues" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
+        </operation>
+
+        <operation name="addUserClaimValuesV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/update
+            </parameter>
         </operation>
 
         <operation name="authenticate">
@@ -77,11 +101,23 @@
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
+        <operation name="deleteRoleV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/rolemgt/delete
+            </parameter>
+        </operation>
+
         <operation name="deleteUser" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/delete
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
+        </operation>
+
+        <operation name="deleteUserV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/delete
+            </parameter>
         </operation>
 
         <operation name="deleteUserClaimValue" mep="http://www.w3.org/ns/wsdl/in-only">
@@ -91,11 +127,23 @@
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
+        <operation name="deleteUserClaimValueV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/delete
+            </parameter>
+        </operation>
+
         <operation name="deleteUserClaimValues" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/delete
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
+        </operation>
+
+        <operation name="deleteUserClaimValuesV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/delete
+            </parameter>
         </operation>
 
         <operation name="getAllProfileNames">
@@ -213,11 +261,23 @@
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
+        <operation name="setUserClaimValueV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/update
+            </parameter>
+        </operation>
+
         <operation name="setUserClaimValues" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
+        </operation>
+
+        <operation name="setUserClaimValuesV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/update
+            </parameter>
         </operation>
 
         <operation name="updateCredential" mep="http://www.w3.org/ns/wsdl/in-only">
@@ -227,11 +287,23 @@
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
+        <operation name="updateCredentialV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/update
+            </parameter>
+        </operation>
+
         <operation name="updateCredentialByAdmin" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/usermgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
+        </operation>
+
+        <operation name="updateCredentialByAdminV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/update
+            </parameter>
         </operation>
 
         <operation name="updateRoleListOfUser" mep="http://www.w3.org/ns/wsdl/in-only">
@@ -241,6 +313,12 @@
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
+        <operation name="updateRoleListOfUserV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/usermgt/update
+            </parameter>
+        </operation>
+
         <operation name="updateRoleName" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/rolemgt/update
@@ -248,11 +326,23 @@
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
         </operation>
 
+        <operation name="updateRoleNameV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/rolemgt/update
+            </parameter>
+        </operation>
+
         <operation name="updateUserListOfRole" mep="http://www.w3.org/ns/wsdl/in-only">
             <parameter name="AuthorizationAction"
                        locked="true">/permission/admin/manage/identity/rolemgt/update
             </parameter>
             <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver"/>
+        </operation>
+
+        <operation name="updateUserListOfRoleV2">
+            <parameter name="AuthorizationAction"
+                       locked="true">/permission/admin/manage/identity/rolemgt/update
+            </parameter>
         </operation>
     </service>
 

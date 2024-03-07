@@ -58,11 +58,46 @@ public class UserStoreManagerService extends AbstractAdmin {
                 convertClaimValueToMap(claims), profileName, requirePasswordChange);
     }
 
+    /**
+     * Adds a new user.
+     *
+     * @param userName              the username of the user
+     * @param credential            the credential/password of the user
+     * @param roleList              the roles to be assigned to the user
+     * @param claims                the properties of the user
+     * @param profileName           the profile name for the user
+     * @param requirePasswordChange whether to require a password change
+     * @return                      true if the operation completes successfully
+     * @throws UserStoreException   if an error occurs during the operation
+     */
+    public boolean addUserV2(String userName, String credential, String[] roleList, ClaimValue[] claims,
+                             String profileName, boolean requirePasswordChange) throws UserStoreException {
+
+        addUser(userName, credential, roleList, claims, profileName, requirePasswordChange);
+        return Boolean.TRUE;
+    }
+
     public void setUserClaimValues(String userName, ClaimValue[] claims, String profileName)
             throws UserStoreException {
         getUserStoreManager().setUserClaimValues(userName, convertClaimValueToMap(claims),
                 profileName);
 
+    }
+
+    /**
+     * Sets multiple user claim values.
+     *
+     * @param userName             the username of the user
+     * @param claims               the claims to be set
+     * @param profileName          the profile name of the user
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean setUserClaimValuesV2(String userName, ClaimValue[] claims, String profileName)
+            throws UserStoreException {
+
+        setUserClaimValues(userName, claims, profileName);
+        return Boolean.TRUE;
     }
 
     public void addUserClaimValues(String userName, ClaimValue[] claims, String profileName)
@@ -111,6 +146,22 @@ public class UserStoreManagerService extends AbstractAdmin {
         }
     }
 
+    /**
+     * Adds multiple user claim values.
+     *
+     * @param userName             the username of the user
+     * @param claims               the claims to be added
+     * @param profileName          the profile name of the user
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean addUserClaimValuesV2(String userName, ClaimValue[] claims, String profileName)
+            throws UserStoreException {
+
+        addUserClaimValues(userName, claims, profileName);
+        return Boolean.TRUE;
+    }
+
     public ClaimValue[] getUserClaimValuesForClaims(String userName, String[] claims,
                                                     String profileName) throws UserStoreException {
         return convertMapToClaimValue(getUserStoreManager().getUserClaimValues(userName, claims,
@@ -124,6 +175,22 @@ public class UserStoreManagerService extends AbstractAdmin {
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
             throw (UserStoreException) e;
         }
+    }
+
+    /**
+     * Adds a new role.
+     *
+     * @param roleName             the name of the role to be added
+     * @param userList             the users to be assigned the added role
+     * @param permissions          the permissions of the role
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean addRoleV2(String roleName, String[] userList, PermissionDTO[] permissions)
+            throws UserStoreException {
+
+        addRole(roleName, userList, permissions);
+        return Boolean.TRUE;
     }
 
     public ClaimDTO[] getUserClaimValues(String userName, String profileName)
@@ -142,9 +209,40 @@ public class UserStoreManagerService extends AbstractAdmin {
 
     }
 
+    /**
+     * Updates a user's credential/password.
+     *
+     * @param userName             the username of the user
+     * @param newCredential        the new credential to be set
+     * @param oldCredential        the old credential to be changed
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean updateCredentialV2(String userName, String newCredential, String oldCredential)
+            throws UserStoreException {
+
+        updateCredential(userName, newCredential, oldCredential);
+        return Boolean.TRUE;
+    }
+
     public void updateCredentialByAdmin(String userName, String newCredential)
             throws UserStoreException {
         getUserStoreManager().updateCredentialByAdmin(userName, newCredential);
+    }
+
+    /**
+     * Updates a user's credential/password as an admin.
+     *
+     * @param userName             the username of the user
+     * @param newCredential        the new credential to be set
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean updateCredentialByAdminV2(String userName, String newCredential)
+            throws UserStoreException {
+
+        updateCredentialByAdmin(userName, newCredential);
+        return Boolean.TRUE;
     }
 
     public long getPasswordExpirationTime(String username) throws UserStoreException {
@@ -160,9 +258,35 @@ public class UserStoreManagerService extends AbstractAdmin {
 
     }
 
+    /**
+     * Deletes a role.
+     *
+     * @param roleName             the name of the role to be deleted
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean deleteRoleV2(String roleName) throws UserStoreException {
+
+        deleteRole(roleName);
+        return Boolean.TRUE;
+    }
+
     public void deleteUser(String userName) throws UserStoreException {
         getUserStoreManager().deleteUser(userName);
 
+    }
+
+    /**
+     * Deletes a user.
+     *
+     * @param userName             the name of the user to be deleted
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean deleteUserV2(String userName) throws UserStoreException {
+
+        deleteUser(userName);
+        return Boolean.TRUE;
     }
 
     public void deleteUserClaimValue(String userName, String claimURI, String profileName)
@@ -171,10 +295,42 @@ public class UserStoreManagerService extends AbstractAdmin {
 
     }
 
+    /**
+     * Deletes a single user claim value.
+     *
+     * @param userName             the username of the user
+     * @param claimURI             the name of the claim
+     * @param profileName          the profile name of the user
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean deleteUserClaimValueV2(String userName, String claimURI, String profileName)
+            throws UserStoreException {
+
+        deleteUserClaimValue(userName, claimURI, profileName);
+        return Boolean.TRUE;
+    }
+
     public void deleteUserClaimValues(String userName, String[] claims, String profileName)
             throws UserStoreException {
         getUserStoreManager().deleteUserClaimValues(userName, claims, profileName);
 
+    }
+
+    /**
+     * Deletes multiple user claim values.
+     *
+     * @param userName             the username of the user
+     * @param claims               the names of the claims
+     * @param profileName          the profile name of the user
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean deleteUserClaimValuesV2(String userName, String[] claims, String profileName)
+            throws UserStoreException {
+
+        deleteUserClaimValues(userName, claims, profileName);
+        return Boolean.TRUE;
     }
 
     public String[] getAllProfileNames() throws UserStoreException {
@@ -258,6 +414,22 @@ public class UserStoreManagerService extends AbstractAdmin {
 
     }
 
+    /**
+     * Sets a single user claim value.
+     *
+     * @param userName             the username of the user
+     * @param claimURI             the name of the claim to be set
+     * @param claimValue           the claim value to be set
+     * @param profileName          the profile name of the user
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean setUserClaimValueV2(String userName, String claimURI, String claimValue,
+                                       String profileName) throws UserStoreException {
+
+        setUserClaimValue(userName, claimURI, claimValue, profileName);
+        return Boolean.TRUE;
+    }
 
     public void addUserClaimValue(String userName, String claimURI, String claimValue, String profileName)
             throws UserStoreException {
@@ -273,20 +445,82 @@ public class UserStoreManagerService extends AbstractAdmin {
         getUserStoreManager().setUserClaimValue(userName, claimURI, claimValue, profileName);
     }
 
+    /**
+     * Adds a single user claim value.
+     *
+     * @param userName             the username of the user
+     * @param claimURI             the name of the claim
+     * @param claimValue           the claim value
+     * @param profileName          the profile name of the user
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean addUserClaimValueV2(String userName, String claimURI, String claimValue, String profileName)
+            throws UserStoreException {
+
+        addUserClaimValue(userName, claimURI, claimValue, profileName);
+        return Boolean.TRUE;
+    }
+
     public void updateRoleListOfUser(String userName, String[] deletedRoles, String[] newRoles)
             throws UserStoreException {
         getUserStoreManager().updateRoleListOfUser(userName, deletedRoles, newRoles);
 
     }
 
+    /**
+     * Updates the roles of a user.
+     *
+     * @param userName             the username of the user
+     * @param deletedRoles         the roles to be removed from the user
+     * @param newRoles             the roles to be added to the user
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean updateRoleListOfUserV2(String userName, String[] deletedRoles, String[] newRoles)
+            throws UserStoreException {
+
+        updateRoleListOfUser(userName, deletedRoles, newRoles);
+        return Boolean.TRUE;
+    }
+
     public void updateRoleName(String roleName, String newRoleName) throws UserStoreException {
         getUserStoreManager().updateRoleName(roleName, newRoleName);
     }
 
+    /**
+     * Updates the name of a role.
+     *
+     * @param roleName             the name of the role to be updated
+     * @param newRoleName          the new name of the role
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean updateRoleNameV2(String roleName, String newRoleName) throws UserStoreException {
+
+        updateRoleName(roleName, newRoleName);
+        return Boolean.TRUE;
+    }
 
     public void updateUserListOfRole(String roleName, String[] deletedUsers, String[] newUsers)
             throws UserStoreException {
         getUserStoreManager().updateUserListOfRole(roleName, deletedUsers, newUsers);
+    }
+
+    /**
+     * Updates the users assigned to a role.
+     *
+     * @param roleName             the name of the role
+     * @param deletedUsers         the users to be removed from the role
+     * @param newUsers             the users to be added to the role
+     * @return                     true if the operation completes successfully
+     * @throws UserStoreException  if an error occurs during the operation
+     */
+    public boolean updateUserListOfRoleV2(String roleName, String[] deletedUsers, String[] newUsers)
+            throws UserStoreException {
+
+        updateUserListOfRole(roleName, deletedUsers, newUsers);
+        return Boolean.TRUE;
     }
 
     private UserStoreManager getUserStoreManager() throws UserStoreException {
