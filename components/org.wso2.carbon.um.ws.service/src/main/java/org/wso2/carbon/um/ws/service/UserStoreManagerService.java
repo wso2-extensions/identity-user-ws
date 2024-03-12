@@ -61,14 +61,14 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Adds a new user.
      *
-     * @param userName              the username of the user
-     * @param credential            the credential/password of the user
-     * @param roleList              the roles to be assigned to the user
-     * @param claims                the properties of the user
-     * @param profileName           the profile name for the user
-     * @param requirePasswordChange whether to require a password change
-     * @return                      true if the operation completes successfully
-     * @throws UserStoreException   if an error occurs during the operation
+     * @param userName              The username of the user.
+     * @param credential            The credential/password of the user.
+     * @param roleList              The roles to be assigned to the user.
+     * @param claims                The properties of the user.
+     * @param profileName           The profile name for the user.
+     * @param requirePasswordChange Whether to require a password change.
+     * @return                      True if the operation completes successfully.
+     * @throws UserStoreException   If an error occurs during the operation.
      */
     public boolean addUserV2(String userName, String credential, String[] roleList, ClaimValue[] claims,
                              String profileName, boolean requirePasswordChange) throws UserStoreException {
@@ -87,11 +87,11 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Sets multiple user claim values.
      *
-     * @param userName             the username of the user
-     * @param claims               the claims to be set
-     * @param profileName          the profile name of the user
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The username of the user.
+     * @param claims               The claims to be set.
+     * @param profileName          The profile name of the user.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean setUserClaimValuesV2(String userName, ClaimValue[] claims, String profileName)
             throws UserStoreException {
@@ -149,11 +149,11 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Adds multiple user claim values.
      *
-     * @param userName             the username of the user
-     * @param claims               the claims to be added
-     * @param profileName          the profile name of the user
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The username of the user.
+     * @param claims               The claims to be added.
+     * @param profileName          The profile name of the user.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean addUserClaimValuesV2(String userName, ClaimValue[] claims, String profileName)
             throws UserStoreException {
@@ -180,11 +180,11 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Adds a new role.
      *
-     * @param roleName             the name of the role to be added
-     * @param userList             the users to be assigned the added role
-     * @param permissions          the permissions of the role
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param roleName             The name of the role to be added.
+     * @param userList             The users to be assigned the added role.
+     * @param permissions          The permissions of the role.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean addRoleV2(String roleName, String[] userList, PermissionDTO[] permissions)
             throws UserStoreException {
@@ -212,11 +212,11 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Updates a user's credential/password.
      *
-     * @param userName             the username of the user
-     * @param newCredential        the new credential to be set
-     * @param oldCredential        the old credential to be changed
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The username of the user.
+     * @param newCredential        The new credential to be set.
+     * @param oldCredential        The old credential to be changed.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean updateCredentialV2(String userName, String newCredential, String oldCredential)
             throws UserStoreException {
@@ -233,10 +233,10 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Updates a user's credential/password as an admin.
      *
-     * @param userName             the username of the user
-     * @param newCredential        the new credential to be set
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The username of the user.
+     * @param newCredential        The new credential to be set.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean updateCredentialByAdminV2(String userName, String newCredential)
             throws UserStoreException {
@@ -261,9 +261,9 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Deletes a role.
      *
-     * @param roleName             the name of the role to be deleted
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param roleName             The name of the role to be deleted.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean deleteRoleV2(String roleName) throws UserStoreException {
 
@@ -279,9 +279,9 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Deletes a user.
      *
-     * @param userName             the name of the user to be deleted
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The name of the user to be deleted.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean deleteUserV2(String userName) throws UserStoreException {
 
@@ -298,11 +298,11 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Deletes a single user claim value.
      *
-     * @param userName             the username of the user
-     * @param claimURI             the name of the claim
-     * @param profileName          the profile name of the user
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The username of the user.
+     * @param claimURI             The name of the claim.
+     * @param profileName          The profile name of the user.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean deleteUserClaimValueV2(String userName, String claimURI, String profileName)
             throws UserStoreException {
@@ -320,11 +320,11 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Deletes multiple user claim values.
      *
-     * @param userName             the username of the user
-     * @param claims               the names of the claims
-     * @param profileName          the profile name of the user
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The username of the user.
+     * @param claims               The names of the claims.
+     * @param profileName          The profile name of the user.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean deleteUserClaimValuesV2(String userName, String[] claims, String profileName)
             throws UserStoreException {
@@ -417,12 +417,12 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Sets a single user claim value.
      *
-     * @param userName             the username of the user
-     * @param claimURI             the name of the claim to be set
-     * @param claimValue           the claim value to be set
-     * @param profileName          the profile name of the user
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The username of the user.
+     * @param claimURI             The name of the claim to be set.
+     * @param claimValue           The claim value to be set.
+     * @param profileName          The profile name of the user.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean setUserClaimValueV2(String userName, String claimURI, String claimValue,
                                        String profileName) throws UserStoreException {
@@ -448,12 +448,12 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Adds a single user claim value.
      *
-     * @param userName             the username of the user
-     * @param claimURI             the name of the claim
-     * @param claimValue           the claim value
-     * @param profileName          the profile name of the user
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The username of the user.
+     * @param claimURI             The name of the claim.
+     * @param claimValue           The claim value.
+     * @param profileName          The profile name of the user.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean addUserClaimValueV2(String userName, String claimURI, String claimValue, String profileName)
             throws UserStoreException {
@@ -471,11 +471,11 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Updates the roles of a user.
      *
-     * @param userName             the username of the user
-     * @param deletedRoles         the roles to be removed from the user
-     * @param newRoles             the roles to be added to the user
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param userName             The username of the user.
+     * @param deletedRoles         The roles to be removed from the user.
+     * @param newRoles             The roles to be added to the user.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean updateRoleListOfUserV2(String userName, String[] deletedRoles, String[] newRoles)
             throws UserStoreException {
@@ -491,10 +491,10 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Updates the name of a role.
      *
-     * @param roleName             the name of the role to be updated
-     * @param newRoleName          the new name of the role
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param roleName             The name of the role to be updated.
+     * @param newRoleName          The new name of the role.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean updateRoleNameV2(String roleName, String newRoleName) throws UserStoreException {
 
@@ -510,11 +510,11 @@ public class UserStoreManagerService extends AbstractAdmin {
     /**
      * Updates the users assigned to a role.
      *
-     * @param roleName             the name of the role
-     * @param deletedUsers         the users to be removed from the role
-     * @param newUsers             the users to be added to the role
-     * @return                     true if the operation completes successfully
-     * @throws UserStoreException  if an error occurs during the operation
+     * @param roleName             The name of the role.
+     * @param deletedUsers         The users to be removed from the role.
+     * @param newUsers             The users to be added to the role.
+     * @return                     True if the operation completes successfully.
+     * @throws UserStoreException  If an error occurs during the operation.
      */
     public boolean updateUserListOfRoleV2(String roleName, String[] deletedUsers, String[] newUsers)
             throws UserStoreException {
