@@ -27,7 +27,7 @@
     <groupId>org.wso2.carbon.identity.user.ws</groupId>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>identity-user-ws</artifactId>
-    <version>5.8.11-SNAPSHOT</version>
+    <version>5.9.0</version>
     <packaging>pom</packaging>
     <name>WSO2 Carbon Remote User Management Client</name>
     <description>
@@ -39,7 +39,7 @@
         <url>https://github.com/wso2-extensions/identity-user-ws.git</url>
         <developerConnection>scm:git:https://github.com/wso2-extensions/identity-user-ws.git</developerConnection>
         <connection>scm:git:https://github.com/wso2-extensions/identity-user-ws.git</connection>
-        <tag>HEAD</tag>
+        <tag>v5.9.0</tag>
     </scm>
 
 
